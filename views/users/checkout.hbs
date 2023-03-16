@@ -1,0 +1,439 @@
+ <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="index.html"><img src="img/core-img/decorablack.png" alt=""></a>
+            </div>
+            <!-- Navbar Toggler -->
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Header Area Start -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="img/core-img/decorablack.png" alt=""></a>
+                
+            </div>
+            <!-- Amado Nav -->
+            <nav class="amado-nav">
+                {{#if user}}
+                {{!-- <div  style="border:1px solid black; width:200px;height: 100px;border-radius: 7px;">
+                    <ul>
+                    <li><a style="text-decoration: none; color:black; font-size:larger;" class="nav-link ps-5" href=""><i class="fa-solid fa-user"></i></a></li>
+                    <li>  {{user.name}}</li>
+                    </ul>
+                </div> --}}
+                {{!-- <div  style=" width:200px;height: 100px;border-radius: 7px; mt-1">
+                    <ul>
+                    <li><a style="text-decoration: none; color:black; font-size:larger;" class="nav-link ps-5" href=""><i class="fa-solid fa-user"></i></a></li>
+                    <li>  {{user.name}}</li>
+                    </ul>
+                </div> --}}
+                <ul>
+                     <li class=""><a href="/user-profile">Profile</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/user-shop">Shop</a></li>
+                    <li><a href="product-details.html">Wishlist</a></li>
+                    <li><a href="/cart">Cart<span class="badge badge-success" >{{cartCount}}</span></a></li>
+                    <li><a href="checkout.html">About</a></li>
+                    <li><a href="checkout.html">Contact</a></li>
+                </ul>
+                {{else}}
+                    <ul>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/user-shop">Shop</a></li>
+                    <li><a href="product-details.html">Contact</a></li>
+                     <li><a href="product-details.html">About</a></li>
+                      <li><a href="/user-login">Sign in</a></li>
+                   
+                </ul>
+                {{/if}}
+            </nav>
+            <div class="cart-fav-search mb-100">
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
+                </div>
+            <!-- Button Group -->
+            <div class="amado-btn-group mt-30 mb-100">
+                <a href="#" class="btn amado-btn mb-15">%Discount%</a>
+                <a href="#" class="btn amado-btn active">New this week</a>
+            </div>
+           
+            <div class="social-info d-flex justify-content-between">
+                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <!-- Header Area End -->
+
+        <!-- Product Catagories Area Start -->
+        
+       
+         <div class="cart-table-area section-padding-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-title">
+                                <h2>Checkout</h2>
+                            </div>
+
+                            <form  name="myform" action="" id="Placeorder">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" name="first_name" value="{{address.fname}}" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" name="last_name" value="{{address.lname}}" placeholder="Last Name" required>
+                                    </div>
+                            
+                                    <div class="col-12 mb-3">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{address.email}}">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="address" placeholder="Address" value="{{address.address}}">
+                                    </div>
+
+                                     <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="country" placeholder="Country" value="{{address.country}}">
+                                    </div>
+                                     <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="state" placeholder="State" value="{{address.state}}">
+                                    </div>
+                            
+                                    {{!-- <div class="col-12 mb-3">
+                                        <select class="w-100" name="country" id="country">
+                                            <option value="usa">United States</option>
+                                            <option value="uk">United Kingdom</option>
+                                            <option value="ger">Germany</option>
+                                            <option value="fra">France</option>
+                                            <option value="ind">India</option>
+                                            <option value="aus">Australia</option>
+                                            <option value="bra">Brazil</option>
+                                            <option value="cana">Canada</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select class="w-100" name="state" id="country">
+                                            <option value="usa">Kerala</option>
+                                            <option value="uk">Tamilnad</option>
+                                            <option value="ger">Karnataka</option>
+                                            <option value="fra">AndhraPradesh</option>
+                                            <option value="ind">Goa</option>
+                            
+                                        </select>
+                                    </div> --}}
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" name="city" placeholder="City" value="{{address.city}}">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" name="zipCode" placeholder="Zip Code" value="{{address.zip}}">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="number" class="form-control" name="phone" min="0" placeholder="Phone No" value="{{address.phone}}">
+                                    </div>
+                            
+                                    <div class="col-12">
+                                        {{!-- <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="Check2" name="save" value=true>
+                                            <label class="custom-control-label" for="customCheck2">Save address</label>
+                                        </div> --}}
+                            
+                                        <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2" name="save" value=true>
+                                            <label class="custom-control-label" for="customCheck2">Save address</label>
+                                        </div>
+                            
+                            
+                            
+                            
+                            
+                                        <div class="custom-control custom-checkbox d-block">
+                                            {{!-- <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                            <label class="custom-control-label" for="customCheck3">Choose from saved address</label> --}}
+                                            <a class="checkout" href="/addressbook">Choose from saved address</a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>{{err}}</p>
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="cart-summary">
+                                        <h5>Cart Total</h5>
+                                        <ul class="summary-table">
+                                            <li><span>subtotal:</span> <span>{{total.[0].total}}</span></li>
+                                            <li><span>delivery:</span> <span>Free</span></li>
+                                            <li><span>total:</span> <span>{{total.[0].total}}</span></li>
+                                        </ul>
+                            
+                                        <div class="payment-method">
+                                            <!-- Cash on delivery -->
+                                            <div>
+                                                <input type="radio" id="cod" name="payment" value="cod">
+                                                <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                                            </div>
+                                            <!-- Paypal -->
+                                            <div>
+                                                <input type="radio" id="paypal" name="payment" value="paypal">
+                                                <label class="custom-control-label" for="paypal">Paypal</label>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="cart-btn mt-100">
+                                            <button type="submit" class="btn amado-btn w-100">Checkout</a>
+                                        </div>
+                            </form>
+                   
+{{!-- 
+                            <div>
+                                <button type="submit" class="btn btn-dark"></button>
+                            </div> --}}
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    $('#Placeorder').submit((e) => {
+       
+        e.preventDefault();
+        $.ajax({
+           url: '/place-order',
+            method: 'POST',
+            data: $('#Placeorder').serialize(),
+            success: (response) => {
+                 console.log(response)
+                if(response.cod){
+                    location.href="/success-page"
+                    console.log(response)
+                }else{
+                    razorpayPayment(response)
+                }
+            }
+        })
+    })
+    
+    function razorpayPayment(order) {
+        order.amount=parseFloat(order.amount)
+        console.log(order.amount)
+        var options = {
+            "key": "rzp_test_PviVA6VS2vFEaD", // Enter the Key ID generated from the Dashboard
+            "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Decora",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+               // alert(response.razorpay_payment_id);
+               // alert(response.razorpay_order_id);
+                //alert(response.razorpay_signature) 
+                verifyPayment(response, order)
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9000090000"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+
+    }
+
+function verifyPayment(payment, order){
+        $.ajax({
+            url:'/verify-payment',
+            data:{
+                payment,
+                order
+            },
+            method:'post',
+            success:(response)=>{
+                console.log("jii",response.status);
+                if(response.status){
+                    location.href='/success-page'
+                }else{
+                    alert("payment failed")
+                }
+            }
+        })
+    }
+</script>
+
+
+<script>
+
+
+     
+    //function verifyPayment(payment, order) {
+      //  $ajax({
+        //    url: 'verify-payment',
+          //  data: {
+            //    payment,
+              //  order
+            //},
+           // method: 'post'
+            //success:(response)=>{
+              //  if(response.status)
+//{
+    //location.href:'/'
+//}else{
+    //alert("payment failed")
+//}
+   // })
+   // }
+
+
+    
+</script>
+
+
+
+                <!-- Single Catagory -->
+               
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <!-- ##### Newsletter Area Start ##### -->
+    <section class="newsletter-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Newsletter Text -->
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="newsletter-text mb-100">
+                        <h2>Subscribe for a <span>25% Discount</span></h2>
+                        <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+                    </div>
+                </div>
+                <!-- Newsletter Form -->
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div class="newsletter-form mb-100">
+                        <form action="#" method="post">
+                            <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Newsletter Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single_widget_area">
+                        <!-- Logo -->
+                        <div class="footer-logo mr-50 mt-5">
+                            <a href="index.html"><img src="img/core-img/decoraWhite.png" alt=""></a>
+                        </div>
+                        <!-- Copywrite Text -->
+                        <p class="copywrite mt-1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="single_widget_area">
+                        <!-- Footer Menu -->
+                        <div class="footer_menu">
+                            <nav class="navbar navbar-expand-lg justify-content-end">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                <div class="collapse navbar-collapse" id="footerNavContent">
+                                    {{#if user}}
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user-shop">Shop</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="product-details.html">Wishlist</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cart.html">Cart</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="checkout.html">About
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    {{else}}
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user-shop">Shop</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="product-details.html">Contact</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cart.html">About</a>
+                                        </li>
+                                        
+                                    </ul>
+                                    {{/if}}
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   

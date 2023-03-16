@@ -1,0 +1,42 @@
+<div class="p-5">
+  <a class="btn amado-btn mb-2" style="float: right;" href="/admin/product-add">ADD PRODUCT</a>
+<table class="table mt-5">
+  
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sl.No</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col"></th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+     {{#each productList}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{pname}}</td>
+      <td>{{brand}}</td>
+      <td>{{category}}</td>
+      <td>{{price}}</td>
+      <td>{{stock}}</td>
+      <td>{{desc}}</td>
+      <td><img src="/product-images/{{image.[0]}}.jpg" alt="" width="100px" height="100px"></td>
+     
+
+     <td><a class="btn btn-warning" onclick="return confirm('Are you sure you want to edit {{pname}}?')" href="/admin/product-edit/{{_id}}">Edit</a></td>
+     <td><a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete {{pname}}?')" href="/admin/product-delete/{{_id}}">Delete</a></td>
+
+ </tr>
+{{/each}}
+    </tbody>
+</table>
+
+</div>
+ 

@@ -1,0 +1,62 @@
+<section class="vh-100 bg-image" style="background-color: white; scroll"
+  {{!-- style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');"> --}}
+  
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px; bordercolor:black" >
+            <div class="card-body p-5" >
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form method="post" action="/user-signup">
+
+                <div class="form-outline mb-2">
+                  <input type="text" name="name" id="form3Example1cg" class="form-control form-control-lg"  style="background-color:#DCDCDC;"/>
+                  <label class="form-label" for="form3Example1cg">Name</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg"  style="background-color:#DCDCDC;" />
+                  <label class="form-label" for="form3Example3cg">Email</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <input type="text" name="phone" id="form3Example4cg" class="form-control form-control-lg" style="background-color:#DCDCDC;"/>
+                  <label class="form-label" for="form3Example4cg">Phone</label>
+                </div>
+                      
+                <div class="form-outline mb-2">
+                  <input type="password" name="password" id="form3Example4cdg" class="form-control form-control-lg" style="background-color:#DCDCDC;"/>
+                  <label class="form-label" for="form3Example4cdg">password</label>
+                  
+                </div>
+
+                 <div class="form-outline mb-2">
+                  <input type="password" name="cpassword" id="form3Example5cdg" class="form-control form-control-lg" style="background-color:#DCDCDC;"/>
+                  <label class="form-label" for="form3Example5cdg">confirm password</label>
+                  
+                </div>
+                <div>
+                    <p class="text-danger">{{err}}</p>
+                </div>
+
+
+                <div class="d-flex justify-content-center">
+
+                  
+            <button type="submit" class="btn btn-dark btn-lg mb-3">Signup</button>
+                </div>
+
+                <p class="text-center text-muted mt-3 mb-0">Have already an account? <a href="/user-login"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
